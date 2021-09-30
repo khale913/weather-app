@@ -6,6 +6,7 @@ window.addEventListener("load", () => {
   );
   let temperatureDegree = document.querySelector(".temperature-degree");
   let locationTimezone = document.querySelector(".location-timezone");
+  let iconInput = document.querySelector(".icon");
 
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition((position) => {
@@ -20,11 +21,14 @@ window.addEventListener("load", () => {
         })
         .then((data) => {
           console.log(data);
-          const { temperature, shortForecast } = data.properties.periods[0];
+          const { temperature, shortForecast, icon } =
+            data.properties.periods[0];
 
+          console.log(icon);
           // Set DOM Elements from the API
           temperatureDegree.textContent = temperature;
           temperatureDescription.textContent = shortForecast;
+          iconInput.src = icon;
         });
       const api2 = `https://api.weather.gov/points/${lat},${long}`;
       fetch(api2)
