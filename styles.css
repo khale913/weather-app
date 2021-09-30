@@ -40,3 +40,7 @@ body {
 .degree-section h2 {
   font-size: 40px;
 }
+
+.degree-section:hover {
+  cursor: pointer;
+}
