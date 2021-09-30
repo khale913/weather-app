@@ -44,3 +44,7 @@ body {
 .degree-section:hover {
   cursor: pointer;
 }
+
+img {
+  border-radius: 30%;
+}
